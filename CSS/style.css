@@ -1,0 +1,232 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Espaço abaixo da barra de navegação */
+}
+
+nav button {
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav button:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.secao {
+    display: none;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.secao.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilos gerais para os botões */
+.acao {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px; /* Adiciona espaçamento lateral entre ações */
+}
+
+/* Estilo para o botão de editar */
+.btn-editar {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+}
+
+.btn-editar:hover {
+    background-color: #45a049; /* Verde mais escuro */
+}
+
+/* Estilo para o botão de excluir */
+.btn-excluir {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border: none;
+}
+
+.btn-excluir:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+.lista {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.lista-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Mantenha um padding para conforto */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px; /* Aumenta o espaço entre as linhas */
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#salvarBanco {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#salvarBanco:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+/* Novo estilo para garantir que os botões não sobreponham textos */
+.lista-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px; /* Ajuste do espaçamento */
+}
+
+/* Estilo para botões de prioridade */
+.btn-prioridade {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: yellow;
+    text-align: center;
+    text-decoration: none; /* Remove underline de links */
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 10%;
+}
+
+
+
+.btn-prioridade-alta {
+    background-color: red; /* Cor para prioridade alta */
+}
+
+.btn-prioridade-media {
+    background-color: yellow; /* Cor para prioridade média */
+}
+
+.btn-prioridade-baixa {
+    background-color: green; /* Cor para prioridade baixa */
+}

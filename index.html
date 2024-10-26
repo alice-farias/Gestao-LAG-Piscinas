@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAG Piscinas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestão - LAG Piscinas </h1>
+        <nav>
+            <button onclick="mostrarSecao('cadastroClientes')">Cadastro de Clientes</button>
+            <button onclick="mostrarSecao('orcamentos')">Orçamentos Solicitados</button>
+            <button onclick="mostrarSecao('gerenciarContatos')">Gerenciar Contatos</button>
+            <button onclick="mostrarSecao('pagamentos')">Registros de Pagamento</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="cadastroClientes" class="secao active">
+            <h2>Cadastro de Clientes</h2>
+            <form id="formCadastro">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="text" id="endereco" placeholder="Endereço" required>
+                <textarea id="detalhes" placeholder="Detalhes do Serviço" required></textarea>
+                <button type="submit">Cadastrar Cliente</button>
+            </form>
+            <div id="clientesLista" class="lista"></div>
+        </div>
+
+        <div id="orcamentos" class="secao">
+            <h2>Orçamentos Solicitados</h2>
+            <form id="formOrcamento">
+                <label for="orcamentoClienteId">Selecionar Cliente:</label>
+                <select id="orcamentoClienteId" required>
+                    <option value="">Selecione um Cliente</option>
+                    <!-- A lista de clientes será preenchida aqui -->
+                </select>
+                <input type="number" id="orcamentoPreco" placeholder="Preço do Orçamento" required>
+                <textarea id="orcamentoDetalhes" placeholder="Detalhes do Orçamento" required></textarea>
+                <button type="submit">Solicitar Orçamento</button>
+            </form>
+            <div id="orcamentosLista" class="lista"></div>
+        </div>
+
+        <div id="gerenciarContatos" class="secao">
+            <h2>Gerenciar Contatos</h2>
+            <form id="formContato">
+                <label for="contatoClienteId">Selecionar Cliente:</label>
+                <select id="contatoClienteId" required>
+                    <option value="">Selecione um cliente</option>
+                    <!-- A lista de clientes será preenchida aqui -->
+                </select>
+                <label for="notaContato">Nota:</label>
+                <input type="text" id="notaContato" required>
+                <label for="prioridade">Prioridade:</label>
+                <select id="prioridade" required>
+                    <option value="Alta">Alta</option>
+                    <option value="Média">Média</option>
+                    <option value="Baixa">Baixa</option>
+                </select>
+                <button type="submit">Cadastrar Contato</button>
+            </form>
+            <div id="contatosLista" class="lista">
+                <div class="lista-item">
+                    <span class="prioridade-alta">Alta</span>
+                    <span>Nome do Cliente - Nota</span>
+                    <div>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-excluir">Excluir</button>
+                    </div>
+                </div>
+                <div class="lista-item">
+                    <span class="btn-prioridade-media">Média</span>
+                    <span>Nome do Cliente - Nota</span>
+                    <div>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-excluir">Excluir</button>
+                    </div>
+                </div>
+                <div class="lista-item">
+                    <span class="prioridade-baixa">Baixa</span>
+                    <span>Nome do Cliente - Nota</span>
+                    <div>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-excluir">Excluir</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div id="pagamentos" class="secao">
+            <h2>Registros de Pagamento</h2>
+            <form id="formPagamento">
+                <label for="pagamentoClienteId">Selecionar Cliente:</label>
+                <select id="pagamentoClienteId" required>
+                    <option value="">Selecione um Cliente</option>
+                    <!-- A lista de clientes será preenchida aqui -->
+                </select>
+                <input type="number" id="valorPagamento" placeholder="Valor" required>
+                <select id="pagamentoForma" required>
+                    <option value="" disabled selected>Selecione Forma de Pagamento</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Transferência">Transferência</option>
+                </select>
+                <input type="date" id="pagamentoData" required>
+                <label>
+                    Pago: <input type="checkbox" id="pagamentoPago">
+                </label>
+                <button type="submit">Registrar Pagamento</button>
+            </form>
+            <div id="pagamentosLista" class="lista"></div>
+        </div>
+    </main>
+
+    <footer>
+        <button id="salvarBanco">Salvar Banco de Dados</button>
+    </footer>
+
+    <script src="db/sql-wasm.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
